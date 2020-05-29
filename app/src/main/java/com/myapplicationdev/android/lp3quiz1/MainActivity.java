@@ -40,10 +40,21 @@ public class MainActivity extends AppCompatActivity {
                     NotificationChannel("default", "Default Channel",
                     NotificationManager.IMPORTANCE_DEFAULT);
 
-            channel1.setDescription("This is for default notification");
+
+            channel1.setDescription("~1 notification per day");
             notificationManager.createNotificationChannel(channel1);
 
+
+            NotificationChannel channel2 = new
+                    NotificationChannel("default", "Marketing Channel",
+                    NotificationManager.IMPORTANCE_DEFAULT);
+
+
+            channel2.setDescription("This is for default notification");
+            notificationManager.createNotificationChannel(channel2);
+
         }
+
 
         Intent intent = new Intent(MainActivity.this, MainActivity.class);
         final PendingIntent pIntent = PendingIntent.getActivity (MainActivity.this, requestCode, intent,
@@ -136,5 +147,4 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
 }
