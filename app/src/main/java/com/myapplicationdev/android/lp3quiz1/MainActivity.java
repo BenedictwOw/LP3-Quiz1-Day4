@@ -41,16 +41,17 @@ public class MainActivity extends AppCompatActivity {
                     NotificationManager.IMPORTANCE_DEFAULT);
 
 
-            channel1.setDescription("~1 notification per day");
+            channel1.setDescription("Default Description");
             notificationManager.createNotificationChannel(channel1);
 
-
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel2 = new
                     NotificationChannel("default", "Marketing Channel",
                     NotificationManager.IMPORTANCE_DEFAULT);
 
 
-            channel2.setDescription("This is for default notification");
+            channel2.setDescription("~1 notification per day");
             notificationManager.createNotificationChannel(channel2);
 
         }
